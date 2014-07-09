@@ -1,0 +1,26 @@
+<snippet>
+	<content><![CDATA[
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+import unittest
+
+
+class Tester(unittest.TestCase):
+	# Create browser driver and open the page
+	def setUp(self):
+		self.browser = webdriver.Firefox()
+		self.browser.get(url)
+		self.assertIn('${1}', self.browser.title)
+
+	# Close the browser window
+	def tearDown(self):
+		self.browser.close()
+
+if __name__ == '__main__':
+	unittest.main()
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>functest</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.python</scope>
+</snippet>
